@@ -1,38 +1,37 @@
 # CSV Data Analysis Pipeline
 
-A fast, simple Python tool built with **Polars** that cleans, transforms, and analyzes any CSV dataset. Just run the script, enter your CSV file path, and get summary statistics and a correlation matrix saved automatically.
+A Python tool using **Polars** and **Plotly** to clean, transform, and analyze CSV datasets, generating summary reports, correlation matrices, and interactive browser dashboards.
 
-## What It Does
-- **Cleans Data**: Removes rows with missing values (`?`, `NA`, `null`, etc.) and converts text columns into numerical dummy columns (`0`s and `1`s).
-- **Normalizes Numbers**: Standardizes numerical columns while leaving binary dummy columns untouched.
-- **Generates Reports**: Creates two CSV files inside an `output/` folder:
-  - `<your_file>_summary.csv` (count, mean, std, min, max, etc.)
-  - `<your_file>_correlation.csv` (correlation matrix across all numerical features)
+## Features
+- **Data Cleaning**: Drops rows with missing values (`?`, `NA`, `null`) and encodes text columns into binary dummy columns.
+- **Normalization**: Scales numerical columns while preserving binary variables.
+- **Output Files**: Generates an `output/` directory containing `<your_file>_summary.csv`, `<your_file>_correlation.csv`, and an interactive `<your_file>_dashboard.html`.
 
-## How to Use
+## Usage
 
-1. **Clone this repository**
+1. **Clone the repository**
    ```bash
    git clone https://github.com
    cd csv-data-pipeline
    ```
 
-2. **Install Polars**
+2. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the pipeline**
+3. **Run the script**
    ```bash
-   python pipeline.py
+   python Pipeline.py
    ```
-   When prompted, paste the path to your CSV file (or drag and drop the file straight into your terminal) and press **Enter**.
+   Provide your CSV file path when prompted.
 
 ## Project Structure
 ```text
 csv-data-pipeline/
-├── pipeline.py        # Main data cleaning & analysis script
-├── requirements.txt   # Required Python packages
-├── .gitignore         # Ignores generated output files
-└── README.md          # Project guide
+├── Pipeline.py        # Main execution script
+├── requirements.txt   # Python dependencies
+├── .gitignore         # Excludes output files
+├── LICENSE            # MIT License
+└── README.md          # Documentation
 ```
